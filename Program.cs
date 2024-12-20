@@ -18,7 +18,23 @@
         {
             // ???
 
-            return null;
+            List<string> list = new List<string>();
+
+            foreach (var student in classes) {
+                foreach (var student2 in student.Students)
+                {
+                    list.Add(student2);
+                }
+            }
+
+            string[] result = new string[list.Count];
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                result[i] = list[i].ToString();
+            }            
+
+            return result;
         }
 
         public class Classroom
